@@ -143,4 +143,35 @@ exp:
 ##########################################################
 
 - #015 - Concatenation
+exp :
+let a = "my name";
+let b = "is abdennour";
+console.log(a+" "+b) // my name is abdennour
+
+##########################################################
+- #016 - Template Literals Template Strings
+-----------------------------------------------
+exp:
+let a = "my name";
+let b = "is abdennour";
+console.log(`${a} ${b}`) // my name is abdennour
+
+##########################################################
+- #018 - Arithmetic Operators
+------------------------------------------------------------------
++ addition : exp : 5 + 6 // 11
+- subtraction : exp : 11 - 5 // 6
+* multiplication : exp : 11 * 9 // 99 
+/ division : exp : 15 / 3 // 5
+** exponentiation : exp : 5**2 //25
+% modulus : exp : 10 % 8 // 2
+++ increment [post / pre] 
+exp : let num = 15 ;
+post ==> num++ //  15  , ستظهر15 مع تخزين 1 المزاد وعند استدعاء المتغير من جديد تصبح نتيجة 16
+pre ==> ++num //  16 , مباشرة يضيف واحد الى المتغير 
+
+-- decrement [post / pre]
+
+
+##########################################################
  */  
