@@ -176,7 +176,61 @@ exp : b = 5 ;
  pre ==> console.log(--b) //4
 ##########################################################
 
+- #019 - Unary Plus And Negation Operators_2
+----------------------------------------------
+- Unary Plus :
+normal number :exp: console.log(100) //100
+string number :exp: console.log(+"100") //100
+string negative number :exp: console.log(+"-100") //-100
+string text :exp: console.log(+"abdennour") //nan
+float :exp: console.log(+15.5) //15.5
+hexadecimal numeral system => 0xff exp: console.log(+0xff) //255
+null : exp: console.log(+null) //0
+false: exp: console.log(+false) //0
+true : exp: console.log(+true) //1
+- Unary negation :
+normal number :exp: console.log(-100) //-100
+string number :exp: console.log(-"100") //-100
+string negative number :exp: console.log(-"-100") //+100
+string text :exp: console.log(-"abdennour") //nan
+float :exp: console.log(-15.5) //-15.5
+hexadecimal numeral system => 0xff exp: console.log(-0xff) //-255
+null : exp: console.log(-null) //-0
+false: exp: console.log(-false) //-0
+true : exp: console.log(-true) //-1
+##########################################################
 
+- #020 - Type Coercion
+------------------------
+exp :
+let a ="10";
+let b = 20;
+let c = true;
+console.log(a + b)//30
+console.log(a - b)//-10
+console.log("" - b)//-20
+console.log(false - true)//-1 
+##########################################################
+
+- #021 - Assignment Operators
+------------------------------
+exp : let a = 10;
+a = a + 20; ====> console.log(a += 20)//30
+a = a - 20; ====> console.log(a -= 20)//-10
+a = a * 20; ====> console.log(a *= 20)//200
+##########################################################
+
+- #023 - Number
+------------------
+double precision : exp : console.log(1000000)//1000000
+syntactic sugar "_": exp : console.log(1_000_000)//1000000
+e: exp : console.log(1e6)//1000000
+**: exp : console.log(10**6)//1000000
+with decimal: exp : console.log(10*10*10*10*10*10)//1000000
+: exp : console.log(1000000.0)//1000000
+number + bigInt: 
+exp : console.log(number.MAX_SAFE_INTEGERs)//وهذا أأمن رقم باللغة يمكنك استخدامه
+exp : console.log(number.MAX_VALUE)//هذا اعلى رقم باللغة
 
 
  */  
