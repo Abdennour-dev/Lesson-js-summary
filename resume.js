@@ -143,4 +143,40 @@ exp:
 ##########################################################
 
 - #015 - Concatenation
+--------------------------
+exp:
+let a = "we love"
+let b = "javascript"
+document.write(a +" "+ b);
+##########################################################
+
+- #016 - Template Literals Template Strings
+--------------------------------------------
+exp:
+let a = "we love"
+let b = "javascript"
+document.write(`${a} ${b}`);
+##########################################################
+
+- #018 - Arithmetic Operators
+------------------------------
++ : addition ,exp : console.log(10 + 20) //30
+- : subtraction ,exp : console.log(15 - 5) //10
+* : multiplication ,exp : console.log(5 * 5) //25
+/ : division ,exp : console.log(40 / 8) //5
+% : modulus ,exp : console.log(10 / 8) //2
+** : exponentiation , exp : console.log(2**2) //4
+++ : increment [post / pre] ,
+exp : a = 10;
+ post ==> console.log(a++) //ستظهر النتيجة 10 ولكن عند استدهاء المتغير مرة اخرى تظهر النتيجة 11 اي انها تضيف واحد للمتغير وعند الاستدعاء مرة اخرى تظهر 11
+ pre ==> console.log(++a) //تظهر مباشرة 11
+-- : decrement [post / pre] ,
+exp : b = 5 ;
+ post ==> console.log(b--) //تظهر 5 ولكن عند استدعاء مرة اخرى تظهر 4
+ pre ==> console.log(--b) //4
+##########################################################
+
+
+
+
  */  
