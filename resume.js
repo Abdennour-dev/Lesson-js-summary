@@ -416,8 +416,58 @@ console.log(price)//80 تحقق شرط الطالب وتم انقاص 80 بال�
 سنقوم باخذ مثال عن الكتابة المختصرة للشروط 
 exp : 
 let nm ="abdennour" , gn = "male" , ag =27 ; 
-gn ==="male" ? console.log(`hello mrs ${nm}`); :console.log(`hello miss`);
+gn ==="male"  الشرط
+? console.log(`hello mrs ${nm}`); حاصل الشرط
+:console.log(`hello miss`); اذا لم يتحقق الشرط يحصل هذا 
+##########################################################
 
+- #036 - Nullish Coalescing Operator And Logical Or
+----------------------------------------------------
+1-Nullish Coalescing Operator 
+exp : Null + Undefined الشرط
+let price = null ;
+console.log(`the price is ${price ?? 200}`)// 0     في وجود القيمة المشروطة ومع استعمال رمزي الاستفهام ستظهر النتيجة 0 
+
+2-Logical Or
+exp: Null + Undefined + Any Falsy Value الشرط
+let price = 0 ;
+console.log(`the price is ${price || 200}`)// 200      في وجود القيمية المشروطة ومع استعمال رمز ال أو ستظهر نتيجة 200  
+##########################################################
+
+- #038 - Switch Statement
+----------------------------
+switch(expression){
+  case1 : 
+  // code block
+  break ;
+  case2 : 
+  // code block
+  break ;
+  case3 : 
+  // code block
+  break ;
+  default :
+}
+
+exp : 
+let day = 2 ; //سيظهر لنا يوم الاثنين
+let day = 3 ; // multiple match سيظهر لنا يوم الاثنين وهذه الطريقة الاكثر من اسدعاء 
+let day = 6 ; // ستظهر رسالة هذا يوم غير معروف لان 6 غير موجودة داخل السويتش 
+switch(day){
+  case 0: 
+  console.log("السبت")
+  break ;
+  case 1: 
+  console.log("الاحد")
+  break ;
+  case 2: 
+  case 3: 
+  console.log("الاثنين")
+  break ;
+  default:
+     console.log("هذا يوم غير معروف")
+}
+##########################################################
 */  
 
 
