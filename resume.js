@@ -340,7 +340,84 @@ a = a * 20; ====> console.log(a *= 20)//200
 
  - #031 - Comparison Operators
  ------------------------------
- 
- */  
+ في هذا الشطر نحن نقارن القيمة 
+ Equal  ==  : exp console.log("10" == 10 )//true  
+ Not equal != : exp console.log("10"  != 10 )//false 
+
+هنا نقارن القيمة ونوع البيانات
+ Identical === : exp console.log("10" === 10 )//false 
+ Not identical !== : exp console.log("10" !== 10 )//true
+
+هنا نقارن بطريقة عادية 
+ > Larger than : exp console.log("10" > 10 )//false
+ >= Larger than or equal : exp console.log("10" >= 10 )//true
+هنا نقارن بطريقة عادية 
+ < Smaler than : exp console.log("10" < 12 )//true
+ <= Smaler than or equal : exp console.log("10" <= 10 )//true
+ ##########################################################
+
+- #032 - Logical Operators
+---------------------------
+Not ! : معناها ليس
+exp : console.log(true)//true - not - console.log(!true)//false
+And &&  : معناها و
+exp : console.log(10 == "10" && 10 < 15)//true
+
+Or || : معناها أو 
+exp : console.log(10 == "10" || 10 < 15)//true
+##########################################################
+
+- #033 - If Conditions
+-----------------------------
+if( هنا نكتب الشرط ){
+
+هنا ما يحصل اذا حصل الشرط
+
+}else if( هنا الشرط الثاني ){
+
+اذا لم يتحقق الشرط الاول
+يتحقق حاصل الشرط الثاني
+
+}else{
+
+هنا ما سيحصل اذا لم يتحقق كل من الشرطين الاولين
+
+}
+exp : 
+let price = 100, discount = true , discountamount = 30 , country = "algeria" ;
+if(discount == true){
+  price -= discountamount;
+}else if (country = "algeria"){
+ price -= 50;
+}else{
+  price -= 10;
+}
+console.log(price)// 70 ظهرت هذه النتيجة لان الشرط الاول تحقق 
+##########################################################
+
+- #034 - Nested If Condition
+-----------------------------------
+سنأخذ نفس شروط الاول
+exp :
+let price = 100, discount = true , discountamount = 30 , country = "algeria" , student = true;
+if(country =="algeria"){
+  if(student == true){
+  price -=  price -= discountamount +50;
+  }else{
+     price -= discountamount + 10;
+  }
+}
+console.log(price)//80 تحقق شرط الطالب وتم انقاص 80 بالمئة من الثمن 
+##########################################################
+
+- #035 - Conditional Ternary Operator
+---------------------------------------
+// condition ? if true : if false 
+سنقوم باخذ مثال عن الكتابة المختصرة للشروط 
+exp : 
+let nm ="abdennour" , gn = "male" , ag =27 ; 
+gn ==="male" ? console.log(`hello mrs ${nm}`); :console.log(`hello miss`);
+
+*/  
 
 
