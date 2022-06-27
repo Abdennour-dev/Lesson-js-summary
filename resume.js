@@ -579,6 +579,29 @@ consloe.log(ELL.join( " " ))//   ويضع فراغا بين كل عنصر موج
 ****************يتبع*****************
 
 
+- #086 - What Is DOM And Select Elements
+-----------------------------------------
+DOM : document object model
+****************************************
+code html:
+ <div id='my-c'>you welcome</div>
+ <p>hello my friends</p>
+ <span class='myspan'>april month</span>
+
+******************************************
+-- Find element by id :
+     exp : 
+       let myId = document.getElementById("my-c");
+
+-- Find element by tage name
+
+-- Find element by class name
+
+-- Find element by css selectors
+
+-- Find element by collection
+
+
 */ 
 
 
