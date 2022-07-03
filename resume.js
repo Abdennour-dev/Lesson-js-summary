@@ -1,4 +1,4 @@
-//تلخيص دروس الزيرو 
+//تلخيص دروس الزيرو
 /*
 - #007 - Output To Screen
 -------------------------------
@@ -577,6 +577,145 @@ consloe.log(ELL.join( " " ))//   ويضع فراغا بين كل عنصر موج
 ##########################################################
 
 ****************يتبع*****************
+- #071 - Higher Order Functions - Map
+----------------------------------------
+Higher Order Functions
+> is a function that accepts functions as parameters and/or returns a function.
+- - Map
+method creates a new array
+populated with the results of calling a provided function on every element
+in the calling array.
+Syntax map(callBackFunction(Element, Index, Array){}, thisArg)
+- Element => The current element being processed in the array.
+- Index = > The index of the current element being processed in the array.
+- Array = > The Current Array
+Notes
+- Map Return A New Array
+Examples
+- Anonymous Function
+- Named Function
+
+##########################################################
+
+- #072 - Higher Order Functions - Map Practice
+------------------------------------------------
+-MAP :
+- swap cases
+- inverted numbers
+- ignore numbers value
+map مثال عملي على 
+1)example :
+المطلوب ارجاع الحروف الكبيرة الى صغيرة 
+
+let swappingCases = "elZERo" ;
+
+let sw = swappingCases.split("").map(function (ele){
+// Condition ? True : False
+return ele === ele.toUpperCase()? ele.toLowerCase (): ele.toUpperCase() ;
+}.join("");
+console.log(sw);// ELzerO   ونكون قد حللنا المشكل 
+
+2)example :
+جعل كل رقم موجب سالب والعكس صحيح 
+let invertedNumbers = [1, -10, -20, 15, 190, -39] ;
+let inv = invertedNumbers.map(function(ele){
+  returne -ele;
+});
+console.log(inv);// [-1, 10, 20, -15, -190, 39]  ونكون قد حللنا المشكل 
+
+3)example :
+اظهار العبارة دون ارقام
+let ignoreNumbers = "Elzl23er4o";
+let ign = ignoreNumbers.split("").map(function(ele){
+return isNaN(parseInt(ele))? ele : "";
+}.join(""));
+console.log(ign)// Elzero ويتم حل المشكل والنتيجة هاهي
+
+
+##########################################################
+
+- #073 - Higher Order Functions - Filter
+------------------------------------------
+- - Filter
+method creates a new array
+- with all elements that pass the test implemented by the provided function.
+Syntax filter (callBackFunction ( Element, Index, Array ) { }, thisArg)
+- Element => The current element being processed in the array *
+- - Index = > The index of the current element being processed in the array.
+Array => The Current Array
+
+1)-- example :
+
+// اجمعلي كل رقم بنفسو 
+let numbers = [11, 20, 2, 5, 17, 10];
+
+ مثال نبين فيه الفرق بين استعمال  
+ map and filter
+
+ // Test Map vs Filter
+
+let addMap = numbers.map(function (el) {
+return el + el;
+};
+console.log(addMap); // [22, 40, 4, 10, 34, 20] قامت بجمع كل عدد بنفسه
+
+let addFilter = numbers.filter(function (el) {
+return el + el;
+};
+console.log(addFilter) ; // [11, 20, 2, 5, 17, 10]  بقيت كما هي وانما قامت بتست فقط 
+
+2)-- example :
+
+// Get Friends With Name Starts With A - A أعطني الاسماء التي تبدأ بحرف
+
+let friends = [ Ahmed , "Sameh", "Sayed ", "Asmaa", "Amgad ", "Israa"];
+
+let filterdFriends = friends,filter (function(el){
+return el.startsWith("A")? true : false;
+});
+console.log(filterdFriends) ;
+
+3)-- example :
+
+// Get Even Numbers Only , أعطني الارقام الزوجية فقط 
+
+let numbers = [11, 20, 2, 5, 17, 10] ;
+let evenNumbers = numbers.filter(function (el){
+return el % 2 === 0 ;
+};
+console.log(evenNumbers) ;
+
+##########################################################
+
+- #074 - Higher Order Functions - Filter Practice
+---------------------------------------------------
+1) example :
+
+// Filter Words More Than 4 Characters : انزع الكلمات التي يفوق عدد حروفها 4
+
+let sentence = " I Love Foood Code Too Playing Much ";
+let smallWords = sentence.split(" ").filter(function(ele){
+return ele.length <= 4;
+}).join("");
+
+console.log(smallWords) ;
+
+2) example : 
+
+// Filter Strings + Multiply : اظهر الارقام من العبارة واضرب كل رقم في نفسه 
+
+let mix = "A13BS2ZX";
+let mixedContent = mix.split("").filter(function (ele) {
+return !isNaN(parseInt(ele));
+}).map(function (ele) {
+return ele * ele;
+}).join("");
+
+console.log(mixedcontent) ;
+
+##########################################################
+
+****************يتبع*****************
 
 
 - #086 - What Is DOM And Select Elements
@@ -584,25 +723,253 @@ consloe.log(ELL.join( " " ))//   ويضع فراغا بين كل عنصر موج
 DOM : document object model
 ****************************************
 code html:
+ <title>my title</title>
+ <body>
  <div id='my-c'>you welcome</div>
  <p>hello my friends</p>
+ <p>my class</p>
+ <p>my shop</p>
  <span class='myspan'>april month</span>
-
+ <header class="hd"></header>
+ <form>
+ <input name="addition" value="1"/>
+ <input name="addition2" value="2"/>
+ </form>
+ <form>
+ <input name="addition3" value="3"/>
+ <input name="addition4" value="4"/>
+ </form>
+ <a href="#">01</a>
+ <a href="#">02</a>
+ <a href="#3">03</a>
+</body>
 ******************************************
--- Find element by id :
+1-- Find element by id :
      exp : 
        let myId = document.getElementById("my-c");
+       
+2-- Find element by tage name :
+     exp : 
+       let myTg = document.getElementsByTagName("p");
 
--- Find element by tage name
+3-- Find element by class :
+     exp : 
+       let myCls = document.getElementByClassName("myspan");
 
--- Find element by class name
+4-- Find element by css selectors :(internet explorer 8 غير مدعومة في )
+     exp : 
+       let myQuery = document.getElementByquerySelector(".hd");       
+       let myallQuery = document.getElementByquerySelectorAll(".hd");       لاستدعاء جميع الوسوم التي تحمل نفس الكلاص
+ 
+5-- title , body , forms , links: 
+     exp:
+       - document.title //
+       - document.body //
+       - document.forms[0].addition.value // يمكن ان نعامل ما نستدعيه حتى بطريقة المصفوفات والاندكس
+       - document.links[2].href // #3 ستظهر نتيجة الرابط كما هو موضح
+##########################################################
 
--- Find element by css selectors
+- #087 - Get Set Elements Content And Attributes
+--------------------------------------------------
+****************************************
+code html:
+<div class="js">javascript <span>div</span></div>
+<img srv="" alt="" />
+<a href="#" class="links">google</a>
 
--- Find element by collection
+******************************************
+DOM [Get / Set elements content and attributes]
+1-- innerHTML :
+2-- textContent :
+exp: 
+let myElement = document.getElementByquerySelector(".js");       لاستدعاء جميع الوسوم التي تحمل نفس الكلاص
+ 
+                                                                       سوف نقوم بتغيير محتوى الكلاص الذي استدعيناه   
+                                                                      سنغير محتوى
+                                                                       html
+myElement.innerHTML ="salam alikoum<h1>abdennour</h1> " ;// 
+                                                                    سنقوم بتغيير محتوى النص وليس اكواد
+                                                                    html
+myElement.textContent ="salam alikoum<h1>abdennour</h1> " ;//   
+
+3-- change attributes directly
+-images : التعديل على صورة والتعامل معها
+
+document.images[0].src = "myfiles/img/header.png";
+document.images[0].alt = "header image";
+document.images[0].title = "header image";
+document.images[0].id = "header image";
+
+4-- change attributes with methods
+   --- getAttribute
+   --- setAttribute
+   exp:
+   let mylinks = document.querySelector(".links");
+      console.log(mylinks.getAttribute("class"))
+      console.log(mylinks.getAttribute("href")) استدعاء الاتربيوت
+      console.log(mylinks.setAttribute("href","https://google.fr"))مع انشاء اتربييوت اضافة رابط الى هذا اتربييوت
+      console.log(mylinks.setAttribute("title","hi") // اضفنا اتربيوت وهو عنوان كان غير موجود
+##########################################################
+
+- #088 - Check Attributes And Examples
+----------------------------------------
+****************************************
+code html:
+<div>div</div>
+<p class="para" title="paragraph" data-src="testing">paragraph</p>
+
+*****************************************
+DOM [Check Attributes]
+1-Element.attributes , -Element.hasAttributes:
+exp:
+console.log(document.getElementsByTagName("p")[0].attributes)// p ستظهر لنا جميع عناصر الاتربييوت الموجودة في عنصر المستدعى 
+2-Element.hasAttribute :
+exp : 
+let myP = document.getElementsByTagName("p")[0]
+if(myP.hasAttribute("data-src")){اشترطنا اذا موجود هذا الاتربييوت ولا ولا 
+  console.log("FOUND") ستظهر هذه النتيجة اذن هو موجود 
+}else{
+  console.log("NOT FOUND")
+}
+-Element.removeAttribute
+exp : 
+let myP = document.getElementsByTagName("p")[0]
+if(myP.hasAttribute("data-src")){اشترطنا اذا موجود هذا الاتربييوت ولا ولا 
+removeAttribute(" ")
+}else{
+  console.log("NOT FOUND")
+}
+##########################################################
+
+- #089 - Create And Append Elements
+-------------------------------------
+DOM [Creat Elements]:
+ -createElements
+ -createComment
+ -createTextNode
+ -createAttribute
+ -appendChild
+   نستعمل مثالا عمليا نفهم فيه هذه الاكواد
+        قمنا بانشاء هذا الكود باكواد الجافاسكربت
+  **************************
+<div class="product" data-custom="" data-test="testing"><!--This is div-->Product one</div>
+
+********************************
+let myElement = document.createElement("div");
+let myAttr = document.createAttribute("data-custom");
+let myText = document.createTextNode("Product one");
+let myComment = document.createComment("This is div");
+
+myElement.className ="product";
+myElement.setAttributeNode(myAttr);
+myElement.setAttribute("data-test","testing");
+
+// append comment to element
+myElement.appendChild(myComment);
+
+// append text to element
+myElement.appendChild(myText);
+
+// append element to body
+document.body.appendChild(myElement)
+##########################################################
+
+- #090 - Product With Title And Description Practice
+-----------------------------------------------------
+DOM [Creat Elements]:
+ --practice product with headeing and paragraph
+  
+   مثال آخر جيد 
+
+  let myMainElement = document.createElement("div");
+  let myHeading = document.createElement("h2");
+  let myParagraph = document.createElement("p");
+
+  let myHeadingText = document.createTextNode("Product Title");
+  let myParagraphText = document.createTextNode("Product Description");
+
+  //Add heading text 
+  myHeading.appendChild(myHeadingText);
+
+  //Add heading to main element
+  myMainElement.appendChild(myHeading);
+
+  //Add paragraph text
+  myParagraph.appendChild(myParagraphText);
+
+  //Add paragraph to main element
+  myMainElement.appendChild(myParagraphText);
+
+  myMainElement.className = "product";
+  
+  document.body.appendChild(myMainElement);
+  ##########################################################
+
+ - #091 - Deal With Children's
+ --------------------------------
+******************************
+code html :
+<div>
+hello div
+<p> hello p </p>
+<span>hello span</span>
+<!-- comment -->
+hello 
+</div>
+
+**********************************
+ -children
+ -childNodes
+ -firstChild
+ -lastChild
+ -firstElementChild
+ -lastElementChild
+ سنضع بعض الامثلة عليها مع شرح خفيف
+
+ let myElement = document.querySelector("div")
+ console.log(myElement); كاملا div تظهرالوسم 
+ console.log(myElement.children);تظهر العناصر التي بداخل الديف
+ console.log(myElement.children[0]);يأتي باول عنصر
+ console.log(myElement.childNodes);ياتي بكل ما هو بادخل الديف
+ console.log(myElement.childNodes[0]);ياتيك باول شيء داخل الديف
+ console.log(myElement.firstChild);او طفل كان شيء ام عنصر
+ console.log(myElement.lastChild);آخر شيء
+ console.log(myElement.firstElementChild);اول عنصر
+ console.log(myElement.lastElementChild);آخر عنصر
+##########################################################
+
+- #092 - DOM Events
+DOM [Events]:
+-Use events on html 
+*********************************
+code html
+مثال 
+<button id="btn" onclick ="consol.log("clicked")">click here</button>
+
+*********************************
+-Use events on js 
+1-onclick : لعمل حدث بعد الكليك
+exp: 
+let myBtn = document.getElementById("btn");
+ myBtn.onclick = function(){
+   console.log("clicked");
+ }
+2-oncontextmenu : عند الضغط على يمين الفأرة 
+3-onmouseenter : عندما تمر الفارة عليه
+4-onmouseleave : عند مرور الفارة عليه ثم انسحابها
+
+5-onload
+6-onscroll : عند هبوطك في صفحة طويلة يمكنك استخدامها
+7-onresize : عندك تغييرك لحجم في الصفحة
+ 
+8-onfocus : عند تركيزك مثلا على انبووت
+9-onblur
+10-onsubmit  تستعمل في ارسال البيانات 
 
 
-*/ 
+*/
+
+
 
 
 
