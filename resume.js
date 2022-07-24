@@ -576,6 +576,69 @@ consloe.log(ELL.join( " " ))//   ويضع فراغا بين كل عنصر موج
 
 ##########################################################
 
+- #048 - Loop - For And Concept Of Loop
+----------------------------------------
+ Loop For :
+for( [1][2][3]){
+
+// Block Of Code
+
+ }
+ exp :
+ for(i =0 ; i < 10 ; i++){
+ console.log(i) // 1 ..... 9   ستظهر النتيجة هكذا
+ }
+
+##########################################################
+
+- #049 - Looping On Sequences_2
+-------------------------------------
+exp : بالمثال يتضح المقال 
+
+let myFriends = [1, 2, "Osama", "Ahmed", 3, 4, "Sayed", 6, "Ali"] ;
+let onlyNames = [] ;
+for(let i = 0; i < myFriends.length; i++){
+if(typeof myFriends[i] === "string"){
+onlyNames.push(myFriends[i]) 
+}
+} // ["Osama", "Ahmed","Sayed", "Ali"] ستكون النتيجة كالتالي سيظهر الكلمات وفقط يعني السترينج
+
+##########################################################
+
+- #050 - Nested Loops And Trainings
+--------------------------------------
+exp : 
+
+let products = [" eyboard(", "Mouse", "Pen", "Pad", "Monitor"] ;
+let colors = ["Red", "Green , "Black"] ;
+let models =[2020, 2021] ;
+for(let i = 6; i < products- length; i++){
+console.log("#".repeat(15) ) ;
+console.log(` # ${products[i] } `) ;
+console.log("#".repeat(15) ) ;
+console.log("Colors: ") ;
+for(let j = 0; j < colors,length; j++){
+console.log('- ${colors[j] } ') ;
+}
+for(let k = 0; k < colors,length; k++){
+console.log('- ${colors[k] } ') ;
+}
+} 
+///// النتيجة اولية ويمكنك ان تتخيل معي كل المنتجات الاخرى تتكرر هكذا
+###############
+# Keyboard
+###############
+Colors:
+- Red
+- Green
+- Black
+Models:
+- 2020
+-2021    ستظهر النتيجة هكذا 
+
+##########################################################
+
+
 ****************يتبع*****************
 - #071 - Higher Order Functions - Map
 ----------------------------------------
@@ -714,6 +777,34 @@ return ele * ele;
 console.log(mixedcontent) ;
 
 ##########################################################
+
+- #075 - Higher Order Functions - Reduce
+-----------------------------------------
+
+- Reduce
+method executes a reducer function on each element of the array,
+resulting in a single output value.
+Syntax
+reduce(callBackFunc(Accumulator > Current Val, Current Index, Source Array){} , initialValue)
+- Accumulator => the accumulated value previously returned in the last invocation
+- Current Val => The current element being processed in the array
+- Index => The index of the current element being processed in the array.
+-starts from index 0 if an initialValue is provided.
+Otherwise, it starts from index 1.
+- Array => The Current Array
+exp :
+
+let nums = [10, 26, 15, 39];
+let add = nums.reduce(function (acc, current, index, arr) {
+console.log( Acc = > ${acc} ') ;
+console.log('Current Element = > ${current} ');
+console.log('Current Element Index = > ${index} ');
+console.log( Array = > ${arr} );
+console.log(acc + current);
+console.log('############# ') ;
+return acc + current;
+}, 5);
+console.log(add) ;
 
 ****************يتبع*****************
 
