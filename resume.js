@@ -1057,10 +1057,100 @@ let myBtn = document.getElementById("btn");
 9-onblur
 10-onsubmit  تستعمل في ارسال البيانات 
 
+###############################################
 
+------------------ يتبع ---------------------
+
+- #102 - What Is BOM-
+---------------------
+BOM [Browser Object Model]
+- Introduction
+Window Object Is The Browser Window
+Window Contain The Document Object
+All Global Variables And Objects And Functions Are Members Of Window Object
+Test Document And Console
+- What Can We Do With Window Object ?
+Open Window
+Close Window
+Move Window
+Resize Window
+Print Document
+Run Code After Period Of Time Once Or More
+Fully Control The URL
+Save Data Inside Browser To Use Later
+
+exp:
+window.console.log("hello");
+window.document.title = "hello";
+
+################################################
+
+- #103 - Alert, Confirm, Prompt
+----------------------------------
+/*
+BOM [Browser Object Model]
+- alert (Message) => Need No Response Only Ok Available
+- confirm(Message) => Need Response And Return A Boolean
+- prompt(Message, Default Message) => Collect Data
+
+
+-1 alert (Message):
+exp : 
+          alert("Test") ;
+
+-2 confirm(Message)
+exp : 
+          let confirmMsg = confirm("Are You Sure?") ;
+          console.log(confirmMsg) ;
+          if(confirmMsg === true){
+          console.log("Item Deleted") ;
+          }else{
+          console.log("Item Not Deleted") ;
+          }
+
+-3 prompt(Message, Default Message) : 
+
+exp : 
+       let promptMsg = prompt("Good Day To YOU ?","Write Day With 3 Characters") ;
+          console.log(promptMsg) ;  
+
+#################################################
+
+- #104 - setTimeout and clearTimeout
+--------------------------------------
+BOM [Browser Object Model]
+- setTimeout (Function, Timeout, Additional Params)
+- clearTimeout(Identifier)
+
+-1 setTimeout (Function, Timeout, Additional Params)
+------------------------------------------------------
+exp :
+      setTimeout(function(){
+      console.log('Msg');
+      },3000);
+
+      setTimeout(sayMsg, 3000);
+      function sayMsg(){
+      console.log('l am Message') ;
+      }
+
+      setTimeout(sayMsg,3000,"abdennour", 27);
+      function sayMsg(user,age){
+      console.log(`l am Message for ${user} his age is ${age}`) ;
+      }
+
+-2 clearTimeout(Identifier)
+-----------------------------
+exp :
+      let counter = setTimeout(sayMsg, 3000);
+            function sayMsg(){
+            console.log('l am Message') ;
+            }
+      let btn = document.querySelector("button");
+      btn.onclick = function(){
+        clearTimeout(counter)
+ }
 */
-
-
 
 
 
