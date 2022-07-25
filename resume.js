@@ -1150,7 +1150,31 @@ exp :
       btn.onclick = function(){
         clearTimeout(counter)
  }
+- #105 - setInterval and clearInterval
+-----------------------------------------
+BOM [Browser Object Model]
+- setInterval (Function, Millseconds, Additional Params)
+- clearInterval(Identifier)
+
+#########################
+code html :
+
+<div>5</div>
+
+#########################
+
+-1 setInterval ()
+-2 clearInterval()
+-----------------------------------------------------------
+في هذا المثال تم استخدام الامرين معا
+exp:
+    let div = document.querySelector("div")
+    function countdown() {
+    div.innerHTML -= 1;
+    if(div.innerHTML === "0"){
+      clearInterval(counter); // يوقف الكود عند الوصول الى 0
+    }
+       }
+    let counter = setInterval(countdown, 1000);// كل ثانية يعاد تشغيل الكود
+    
 */
-
-
-
