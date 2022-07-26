@@ -1150,19 +1150,15 @@ exp :
       btn.onclick = function(){
         clearTimeout(counter)
  }
-- #105 - setInterval and clearInterval
+ - #105 - setInterval and clearInterval
 -----------------------------------------
 BOM [Browser Object Model]
 - setInterval (Function, Millseconds, Additional Params)
 - clearInterval(Identifier)
-
 #########################
 code html :
-
 <div>5</div>
-
 #########################
-
 -1 setInterval ()
 -2 clearInterval()
 -----------------------------------------------------------
@@ -1177,4 +1173,184 @@ exp:
        }
     let counter = setInterval(countdown, 1000);// كل ثانية يعاد تشغيل الكود
     
+####################################################
+- #106 - Window Location Object
+---------------------------------
+BOM [Browser Object Model]
+- location Object
+- href Get / Set [URL| | Hash | | File| |Mail]
+- host
+- hash
+- protocol
+- reload()
+- replace ()
+- assign()
+exp : 
+console.log(location) ; get
+console.log(location.href) ; get 
+      location.href = " https://elzero.org/ "; // تتوجه مباشرة لهذا الرابط set
+      location.href = "/#id "; // يقبل حتى الهاشطاج set
+console.log(location.host) ; //127.0.0.1:5500  port
+console.log(location.hostname) ; //127.0.0.1
+console.log(location.protocol) ;// http : 
+console.log(location.hash) ;// #test يعطيك الهاش الخاص بالرابط اللي انت فيه 
+      location.reload() // يقوم بتحديث الصفحة
+      location.replace("https://google.fr") //  يقوم بالذهاب للرابط مع حذفه من الهيسطوري
+      location.assign("https://facebook.com") // يقوم بالذهاب للرابط مع حفظه في الهيسطوري
+
+#######################################################################
+- #107 - Window Open And Close
+---------------------------------
+BOM [Browser Object Model]
+- open{URL [Opt], Window Name Or Target Attr [Opt], Win Features [Opt] , History
+- close()
+- Window Features
+width [Num]
+height [Num]
+left [Num]
+top [Num]
+
+Search
+- Window.Open Window Features
+exp : 
+مثال توضيحي ستظهر نافذة تاخذك لموقع جوجل بابعاد محددة وفي مكان محدد بعد ثانيتين
+في نافذة اخرى
+setTimeout(function(){
+window.open("https://google.fr","_blank","width=400,height=400,top=40,left=500")
+},2000)
+
+############################################################################
+
+- #108 - Window History Object
+-------------------------------------
+BOM [ Browser Object Model]
+— History API
+---Properties
+      -length
+---Methods
+      -back( )
+      -forward()
+      - go(Delta) => Position In History
+
+Search [For Advanced Knowledge]
+pushState( ) + replaceState()
+exp:
+history.length // يعطيك عدد الصفحات الموجودة في الهيسطوري
+history.back()// ترجعك للصفحة الخلفية في الهيسطوري
+history.forward()// ترجعك للصفحة الامامية في الهيسطوري
+history.go(5)// تاخذك للصفحة الامامية في الهيسطوري رقم 5
+
+
+############################################################################
+
+- #109 - Scroll, ScrollTo, ScrollBy, Focus, Print, 
+-----------------------------------------------------
+BOM [Browser Object Model]
+- stop()
+- print()
+- focus()
+- scrollTo (x > y|| Options)
+- scroll(x, y||Options)
+- scrollBy(x, y|| Options)
+exp :
+let m = window.open("https://google.fr","_blank","width=400,height=400,top=40,left=500")
+stop() // لتوقف العميلة
+m.close() // للخروج من النافذة
+print() // للطبع 
+m.focus() // للتركيز على النافذة مباشرة 
+window.scrollTo(400,200) // تذهب نحو الاحداثيات وتبق في مكانها دون تزويد
+window.scrollTo({ // نفس الكود بطريقة اخرى
+  left : 400,
+  top: 200,
+  behavior: "smooth"
+})
+window.scrollBy(500,300)تذهب للاحداثيات مع امكانية تزويد نفس القيمة كلما اعدنا تنفيذ الكود
+############################################################################
+
+- #110 - Scroll To Top Using Y Practice
+-----------------------------------------------------
+BOM [Browser Object Model]
+- Practice => Scroll To Top
+- scrollx [Alias => PageXOffset]
+- scrollY [Alias => PageYOffset]
+exp :
+###############
+code html & css:
+    <style>
+      body {
+        height: 5000px;
+      }
+      button {
+        background-color: red;
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 6px;
+        border-radius: 4px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+      }
+    </style>
+ 
+    <button>Up</button>
+    
+###############
+let btn = document.querySelector("button") ;
+window.onscroll = function(){
+if(window.scrollY >= 600){
+btn.style.display = "block";
+} else {
+btn.style.display = "none";
+}
+};
+btn.onclick = function(){
+window.scrollTo ({
+left: 0,
+top: 0,
+behavior: "smooth",
+})
+};
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
+
+
+-----------------------------------------------------
+
+############################################################################
 */
