@@ -1314,13 +1314,153 @@ behavior: "smooth",
 };
 ############################################################################
 
-
+- #111 - Local Storage
 -----------------------------------------------------
+BOM [Browser Object Model]
+Local Storage
+- setltem
+- getItem
+- removeltem
+- clear
+- key
+Info
+- No Expiration Time
+- HTTP And HTTPS
+- Private Tab
+exp:
+لدينا قيمتين وهما local storage.setItem في
+key and value
+
+//Set
+window.localStorage.setItem("color","#fff") // الطريقة 1
+window.localStorage.fontWeight = "bold";  // 2
+window.localStorage["fontSize"] = "20px"; // 3
+--------------------
+
+console.log(window.localStorage); // اظهارها على الكونصول
+console.log(typeof window.localStorage); // it 's object
+
+--------------------
+//Get
+console.log(window.localStorage.getItem("color")) // #fff  نحن الان نستدعي اللون ولا ندخله
+console.log(window.localStorage.color) // #fff
+console.log(window.localStorage["color"]) // #fff
+
+//Remove one
+window.localStorage.removeItem("color")
+
+//Remove all
+window.localStorage.clear()
+
+//key
+window.localStorage.key(0) // سيحضر لنا الاندكس 0
+
+// Set color in page
+------------------
+document.body.style.backgroundColor = window.localStorage.getItem("color"); // وضعنا خلفية للصفحة من اللون الذي ادخلناه في لوكال سطوراج 
 
 ############################################################################
 
-
+- #112 - Local Storage Color Application Practice
 -----------------------------------------------------
+BOM [Browser Object Model]
+Local Storage Color Application Practice
+##################
+code html & css :
+--------------------
+  <style>
+      body {
+        background-color: #eee;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        background-color: #ddd;
+        margin: 20px auto;
+        padding: 20px;
+        width: 400px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      }
+      ul li {
+        width: 60px;
+        height: 60px;
+        border: 2px solid transparent;
+        opacity: 0.4;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      ul li.active,
+      ul li:hover {
+        opacity: 1;
+      }
+      ul li:first-child {
+        background-color: red;
+      }
+      ul li:nth-child(2) {
+        background-color: blue;
+      }
+      ul li:nth-child(3) {
+        background-color: green;
+      }
+      ul li:nth-child(4) {
+        background-color: black;
+      }
+      .experiment {
+        background-color: red;
+        width: 600px;
+        height: 300px;
+        margin: 20px auto;
+      }
+    </style>
+    <ul>
+      <li class="active" data-color="red"></li>
+      <li data-color="blue"></li>
+      <li data-color="green"></li>
+      <li data-color="black"></li>
+    </ul>
+    <div class="experiment"></div>
+
+##################
+
+let lis = document.querySelectorAll("ul li") ;
+let exp = document.querySelector(".experiment") ;
+
+if(window.localStorage.getItem("color")){ 
+
+// If There Is Color In Local Storage
+//[1] Add Color To Div
+exp.style.backgroundColor = window.localStorage.getItem("color") ;
+
+//[2] Remove Active Class From All Lis
+lis.forEach((li)=>{
+li.classList.remove("active");
+});
+}else{
+// If No Color in Local Storage I
+console.log("No");
+}
+lis.forEach((li) => {
+li.addEventListener("click",(e) => {
+
+  //Remove Active Class From all Lis
+lis.forEach((li) => {
+li.classList.remove("active");
+
+});
+
+  // Add Active Class To Current Element
+e.currentTarget.classList.add("active") ;
+
+  // Add Current Color To Local Storage
+window.localStorage.setItem("color", e.currentTarget.dataset.color);
+
+  //Change Div Background Color
+exp.style.backgroundColor = e.currentTarget.dataset.color;
+
+}); 
+ }); 
 
 ############################################################################
 
@@ -1354,3 +1494,4 @@ behavior: "smooth",
 
 ############################################################################
 */
+
