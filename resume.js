@@ -637,9 +637,202 @@ Models:
 -2021    ستظهر النتيجة هكذا 
 
 ##########################################################
+- #051 - Loop Control - Break, Continue, Label
+------------------------------------------------
+Loop Control
+- Break
+- Continue
+-  Label
+exp :
+let products =["Keyboard", "Mouse", "Pen , "Pad","Monitor"];
+let colors =[ Red", "Green", "Black"] ;
+for(let i = 0; i < products.length; i++){
+  if(products[i]==="pen"){
+   break;   // عندما يصل للكلمة يتوقف
+   continue; // عندما يصل للكلمة يتخطاها ويواصل 
+  }
+console.log (products[i]) ;//ترتيب الكود مهم
+}
+label: exp
 
+mainloop :for(let i = 0; i < products.length; i++){
+           console.log (products[i]) ;
+                nestedloop: for(let j = 0; j < colors.length; j++){
+                 console.log(colors[j])
+                 }
+}
+###########################################################
 
-****************يتبع*****************
+- #052 - Loop - For Advanced Example
+--------------------------------------
+exp: الكتابة المتقدمة 
+
+let products =[ "Keyboard", "Mouse", "Pen", "Pad , "Monitor", "iPhone"] ;
+let i = 0;
+for(;;){
+console.log(products[i]);
+ i++
+ if(i === products.length)break;
+}
+
+############################################################
+
+- #054 - Loop - While
+--------------------------------------
+exp:
+let products = ["Keyboard", Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let index = 0;
+while (index < products.length) {
+console.log(products[index]);
+index += 1;
+}
+
+############################################################
+
+- #055 - Loop - Do While
+--------------------------------------
+let products = ["Keyboard", Mouse", "Pen", "Pad", "Monitor", "iPhone"];
+let i = 0;
+do{
+console.log(i);// لازم يطبق هذا رغما عن انفه هههههه
+i++
+}while(false);
+console.log(i);
+############################################################
+
+- #057 - Function Intro And Basic Usage
+-----------------------------------------
+Function----
+- What Is Function ?
+- User-Defined vs Built In
+- Syntax + Basic Usage
+- Example From Real Life
+- Parameter + Argument
+- Practical Example
+--------------------------------
+exp: 
+function nameOffunction(parameterName){
+  console.log(`hello my name is ${parameterName}`);
+}
+nameOffunction("abdennour");// هنا نستدعي الدالة وداخلها نضع قيمة الباراميتر 
+############################################################
+
+- #058 - Function Advanced Examples
+--------------------------------------
+exp:
+function sayHello(userName, age){
+if(age < 20){
+console.log ( 'App is Not Suitable For You') ;
+} else {
+console.log ( `Hello ${userName} Your Age is ${age}`) ;
+}
+sayHello("Osama", 38) ;
+sayHello ("Sayed", 40) ;
+sayHello ("morad", 18) ; // مثال جيد عن الدوال
+
+function generateYears(start, end, exclude){
+for(let i = start; i <= end; i++){
+if(i === exclude){
+continue;
+}
+console.log(i) ;
+}
+}
+generateYears (1982, 2021, 2020) ;// مثال مع استثناء سنة 2020
+
+############################################################
+
+- #059 - Function Return And Use Cases
+--------------------------------------
+function
+- Return
+- Automatic Semicolon Insertion [No Line Terminator Allowed]
+- Interruptting
+
+function calc(num1, num2){
+return num1 + num2;
+}
+let result = calc(10, 20) ;
+console.log(result + 100) ; // مثال خفيف يبين دور ريتورن 
+
+function generate(start, end){
+for(let i = start; i <= end; i++){
+if(i === 15){
+return 'Interrupting';
+}
+console.log(i);
+}
+generate(10, 20);
+
+############################################################
+
+- #060 - Function Default Parameters
+--------------------------------------
+Function
+- Default Function Parameters
+- Function Parameters Default [Undefined]
+- Old Strategies [Condition + Logical Or]
+- ES6 Method
+
+function sayHello(username = Unknown", age = "Unknown") {
+// if (age === undefined){
+// age - "Unknown";
+// }
+// age = age || "Unknown";
+return 'Hello ${username} Your Age Is ${age} ';
+}
+console,log{sayHello());
+
+############################################################
+
+- #061 - Function Rest Parameters
+--------------------------------------
+function calc(...numbers) {// argument نستعمل هذه الطريقة عندما لا نعرف عدد  
+let result = 0;
+for (let i = 0 ;i < numbers.length;i++) {
+result += numbers[i]; // result = result + numbers[i]
+}
+return `Finale Result Is ${result}`
+}
+console.log(calc (10, 20, 10, 30, 50) );// البرنامج سيجمع كل اندكس مع نفسه
+
+############################################################
+
+- #062 - Function Ultimate Practice
+--------------------------------------
+
+############################################################
+
+- #064 - Anonymous Function And Practice
+--------------------------------------
+
+############################################################
+
+- #065 - Return Nested Function
+--------------------------------------
+
+############################################################
+
+- #066 - Arrow Function Syntax
+--------------------------------------
+
+############################################################
+
+- #067 - Scope - Global And Local
+--------------------------------------
+
+############################################################
+
+- #068 - Scope - Block
+--------------------------------------
+
+############################################################
+
+- #069 - Scope - Lexical (Static)
+--------------------------------------
+
+############################################################
+
 - #071 - Higher Order Functions - Map
 ----------------------------------------
 Higher Order Functions
@@ -806,8 +999,52 @@ return acc + current;
 }, 5);
 console.log(add) ;
 
-****************يتبع*****************
+############################################################
 
+- #076 - Higher Order Functions - Reduce Practice
+--------------------------------------
+
+############################################################
+
+- #077 - Higher Order Functions - ForEach And Practice
+--------------------------------------
+
+############################################################
+
+- #079 - Object - Introduction
+--------------------------------------
+
+############################################################
+
+- #080 - Dot Notation vs Bracket Notation
+--------------------------------------
+
+############################################################
+
+- #081 - Nested Object And Advanced Trainings
+--------------------------------------
+
+############################################################
+
+- #082 - Create Object With New Keyword
+--------------------------------------
+
+############################################################
+
+- #083 - This Keyword
+--------------------------------------
+
+############################################################
+
+- #084 - Create Object With Create Method
+--------------------------------------
+
+############################################################
+
+- #085 - Create Object With Assign Method
+--------------------------------------
+
+############################################################
 
 - #086 - What Is DOM And Select Elements
 -----------------------------------------
