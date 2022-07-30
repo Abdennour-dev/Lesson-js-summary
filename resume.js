@@ -800,7 +800,31 @@ console.log(calc (10, 20, 10, 30, 50) );// البرنامج سيجمع كل ان
 
 - #062 - Function Ultimate Practice
 --------------------------------------
+Function Advanced Practice
+Parameters
+- Default
+- Rest
+- Loop
+- Condition
 
+function showlnfo(us = "Un" ag = "Un", rt = 0, show ="yes",...sk){
+document.write(' <div >');
+document.write(' < h2>WelcomeJ ${us}</h2> ');
+document.write(' < p >Age: ${ag}</p >') ;
+document.write('< p >Hour Rate: $${rt}</p>');
+if(show === "Yes"){
+if(sk.length > 0){
+document.write( `<p>Skills: ${ sk.join("|") }</p>` ) ;
+} else 2
+document.write( `<p>Skills: No Skills</p>') ;
+} else{
+document.write('<p>Skills Is Hidden</p>') ;
+}
+
+document.write('</div >');
+}
+
+showInfo("Osama", 38, 26,"yes","html","css");
 ############################################################
 
 - #064 - Anonymous Function And Practice
@@ -1731,4 +1755,3 @@ exp.style.backgroundColor = e.currentTarget.dataset.color;
 
 ############################################################################
 */
-
